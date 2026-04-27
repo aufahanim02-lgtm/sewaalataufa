@@ -73,11 +73,11 @@ class UserAuthController extends Controller
     private function redirectByRole($user)
     {
         if ($user->role === 'admin') {
-            return redirect()->route('dashboard.admin');
+            return redirect()->route('admin.dashboard');
         }
 
         if ($user->role === 'petugas') {
-            return redirect()->route('dashboard.petugas');
+            return redirect()->route('petugas.dashboard');
         }
 
         return redirect()->route('home');

@@ -13,9 +13,13 @@
             </div>
 
             <div class="card-body">
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('auth.penyewa.proses') }}">
                     @csrf
-
+                    @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                    @endif
                     <div class="form-group mb-3">
                         <label>Username</label>
                         <input type="text" name="username" class="form-control" required>
